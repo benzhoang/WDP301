@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
@@ -20,15 +20,30 @@ import StaffListPage from "./pages/StaffListPage";
 
 //Import layout
 import AdminLayout from "./layout/AdminLayout";
+import UserListPage from "./pages/UserListPage";
+import CourseListPage from "./pages/CourseListPage";
+import BlogListPage from "./pages/BlogListPage";
 
 // Wrapper component to conditionally render Navbar and Footer
 const AppLayout = () => {
   const location = useLocation();
-  const hideNavbarAndFooter = ["/login", "/signup", "/forget", "/choose-role","/admin/login",
-    "/dashboard","/stafflist",].includes(location.pathname);
+  const hideNavbarAndFooter = [
+    "/login",
+    "/signup",
+    "/forget",
+    "/choose-role",
+    "/admin/login",
+    "/dashboard",
+    "/stafflist",
+    "/userlist",
+    "/courselist",
+    "/bloglist",
+  ].includes(location.pathname);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100%' }}>
+    <div
+      style={{ display: "flex", flexDirection: "column", minHeight: "100%" }}
+    >
       {!hideNavbarAndFooter && <Navbar />}
       <ToastContainer position="top-right" autoClose={2000} />
 
@@ -44,7 +59,7 @@ const AppLayout = () => {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/about" element={<AboutUsPage />} />
           <Route path="/choose-role" element={<ChooseRolePage />} />
-           {/* Admin */}
+          {/* Admin */}
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route
             path="/dashboard"
@@ -59,6 +74,30 @@ const AppLayout = () => {
             element={
               <AdminLayout>
                 <StaffListPage />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/userlist"
+            element={
+              <AdminLayout>
+                <UserListPage />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/courselist"
+            element={
+              <AdminLayout>
+                <CourseListPage />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/bloglist"
+            element={
+              <AdminLayout>
+                <BlogListPage />
               </AdminLayout>
             }
           />

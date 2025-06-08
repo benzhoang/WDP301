@@ -4,20 +4,23 @@ import { FaTrash, FaWrench } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
 import "../styles/StaffListPage.scss";
 
-const StaffListPage = () => {
+const UserListPage = () => {
   const [showPopup, setShowPopup] = useState(false);
 
-  const handleOpenPopup = () => setShowPopup(true);
   const handleClosePopup = () => setShowPopup(false);
 
   return (
     <div className="staff-list-container">
       <div className="top-bar d-flex justify-content-between align-items-center mb-3">
-        <button className="btn btn-primary" onClick={handleOpenPopup}>
-          <FaPlus style={{ marginRight: "5px", paddingBottom: "2px" }} /> Create
-          new staff
-        </button>
-        <div className="search-box">
+        <div
+          className="search-box"
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            margin: "0 auto",
+            width: "100%",
+          }}
+        >
           <input
             type="text"
             placeholder="Search..."
@@ -120,7 +123,6 @@ const StaffListPage = () => {
                     type="text"
                     name="name"
                     placeholder="Enter full name"
-                    style={{ background: "white" }}
                   />
                 </div>
                 <div>
@@ -128,7 +130,6 @@ const StaffListPage = () => {
                     type="text"
                     name="position"
                     placeholder="Enter position"
-                    style={{ background: "white" }}
                   />
                 </div>
                 <div>
@@ -136,7 +137,6 @@ const StaffListPage = () => {
                     type="text"
                     name="email"
                     placeholder="Enter contact email"
-                    style={{ background: "white" }}
                   />
                 </div>
                 <div>
@@ -144,7 +144,6 @@ const StaffListPage = () => {
                     type="text"
                     name="number"
                     placeholder="Enter phone number"
-                    style={{ background: "white" }}
                   />
                 </div>
                 <div>
@@ -152,7 +151,6 @@ const StaffListPage = () => {
                     type="text"
                     name="date"
                     placeholder="Enter date of joining"
-                    style={{ background: "white" }}
                   />
                 </div>
                 {/* <div>
@@ -183,4 +181,4 @@ const StaffListPage = () => {
   );
 };
 
-export default StaffListPage;
+export default UserListPage;

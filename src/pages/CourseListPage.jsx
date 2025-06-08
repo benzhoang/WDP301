@@ -4,20 +4,23 @@ import { FaTrash, FaWrench } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
 import "../styles/StaffListPage.scss";
 
-const StaffListPage = () => {
+const CourseListPage = () => {
   const [showPopup, setShowPopup] = useState(false);
 
-  const handleOpenPopup = () => setShowPopup(true);
   const handleClosePopup = () => setShowPopup(false);
 
   return (
     <div className="staff-list-container">
       <div className="top-bar d-flex justify-content-between align-items-center mb-3">
-        <button className="btn btn-primary" onClick={handleOpenPopup}>
-          <FaPlus style={{ marginRight: "5px", paddingBottom: "2px" }} /> Create
-          new staff
-        </button>
-        <div className="search-box">
+        <div
+          className="search-box"
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            margin: "0 auto",
+            width: "100%",
+          }}
+        >
           <input
             type="text"
             placeholder="Search..."
@@ -33,75 +36,32 @@ const StaffListPage = () => {
         <table className="table table-bordered">
           <thead>
             <tr>
-              <th>Full Name</th>
-              <th>Position</th>
-              <th>Contact Email</th>
-              <th>Phone Number</th>
-              <th>Date of Joining</th>
+              <th>ID</th>
+              <th>Author</th>
+              <th>Title</th>
+              <th>Create at</th>
               <th>Status</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Alice Johnson</td>
-              <td>Software Engineer</td>
-              <td>alice.johnson@example.com</td>
-              <td>123-456-7890</td>
-              <td>2021-05-15</td>
-              <td className="action-buttons">
-                <button className="btn btn-light me-2">
-                  <FaTrash color="red" />
-                </button>
-                <button className="btn btn-light">
-                  <FaWrench color="yellow" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Bob Smith</td>
-              <td>Marketing Specialist</td>
-              <td>bob.smith@example.com</td>
-              <td>234-567-8901</td>
-              <td>2020-03-22</td>
-              <td className="action-buttons">
-                <button className="btn btn-light me-2">
-                  <FaTrash color="red" />
-                </button>
-                <button className="btn btn-light">
-                  <FaWrench color="yellow" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Charlie Brown</td>
-              <td>Sales Manager</td>
-              <td>charlie.brown@example.com</td>
-              <td>345-678-9012</td>
-              <td>2019-07-30</td>
-              <td className="action-buttons">
-                <button className="btn btn-light me-2">
-                  <FaTrash color="red" />
-                </button>
-                <button className="btn btn-light">
-                  <FaWrench color="yellow" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Diana Prince</td>
-              <td>HR Coordinator</td>
-              <td>diana.prince@example.com</td>
-              <td>456-789-0123</td>
-              <td>2022-01-10</td>
-              <td className="action-buttons">
-                <button className="btn btn-light me-2">
-                  <FaTrash color="red" />
-                </button>
-                <button className="btn btn-light">
-                  <FaWrench color="yellow" />
-                </button>
-              </td>
-            </tr>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <tr key={index}>
+                <td>1</td>
+                <td>Loreal</td>
+                <td>Sản phẩm cho da nhạy cảm</td>
+                <td>2021-05-15</td>
+                <td>Active</td>
+                <td className="action-buttons">
+                  <button className="btn btn-light me-2">
+                    <FaTrash color="red" />
+                  </button>
+                  <button className="btn btn-light">
+                    <FaWrench color="yellow" />
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -120,7 +80,6 @@ const StaffListPage = () => {
                     type="text"
                     name="name"
                     placeholder="Enter full name"
-                    style={{ background: "white" }}
                   />
                 </div>
                 <div>
@@ -128,7 +87,6 @@ const StaffListPage = () => {
                     type="text"
                     name="position"
                     placeholder="Enter position"
-                    style={{ background: "white" }}
                   />
                 </div>
                 <div>
@@ -136,7 +94,6 @@ const StaffListPage = () => {
                     type="text"
                     name="email"
                     placeholder="Enter contact email"
-                    style={{ background: "white" }}
                   />
                 </div>
                 <div>
@@ -144,7 +101,6 @@ const StaffListPage = () => {
                     type="text"
                     name="number"
                     placeholder="Enter phone number"
-                    style={{ background: "white" }}
                   />
                 </div>
                 <div>
@@ -152,7 +108,6 @@ const StaffListPage = () => {
                     type="text"
                     name="date"
                     placeholder="Enter date of joining"
-                    style={{ background: "white" }}
                   />
                 </div>
                 {/* <div>
@@ -183,4 +138,4 @@ const StaffListPage = () => {
   );
 };
 
-export default StaffListPage;
+export default CourseListPage;
