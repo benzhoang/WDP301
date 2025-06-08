@@ -23,6 +23,7 @@ import AdminLayout from "./layout/AdminLayout";
 import UserListPage from "./pages/UserListPage";
 import CourseListPage from "./pages/CourseListPage";
 import BlogListPage from "./pages/BlogListPage";
+import ConsultantListPage from "./pages/ConsultantListPage";
 
 // Wrapper component to conditionally render Navbar and Footer
 const AppLayout = () => {
@@ -38,6 +39,7 @@ const AppLayout = () => {
     "/userlist",
     "/courselist",
     "/bloglist",
+    "/consultantlist",
   ].includes(location.pathname);
 
   return (
@@ -98,6 +100,14 @@ const AppLayout = () => {
             element={
               <AdminLayout>
                 <BlogListPage />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/consultantlist"
+            element={
+              <AdminLayout>
+                <ConsultantListPage />
               </AdminLayout>
             }
           />

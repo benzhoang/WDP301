@@ -32,7 +32,7 @@ const SidebarAdmin = ({ isOpen }) => {
           </Link>
         </li>
         <li>
-          <Link to="/consultant">
+          <Link to="/consultantlist">
             <FaUserCheck className="icon" /> Consultant
           </Link>
         </li>
