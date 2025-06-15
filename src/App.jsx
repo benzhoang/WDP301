@@ -15,15 +15,20 @@ import BlogPage from "./pages/BlogPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import ChooseRolePage from "./pages/ChooseRolePage";
 import AdminLoginPage from "./pages/AdminLoginPage";
-import DashboardPage from "./pages/DashboardPage";
+import DashboardPage from "./pages/admin/DashboardPage";
 import StaffListPage from "./pages/StaffListPage";
 
 //Import layout
 import AdminLayout from "./layout/AdminLayout";
-import UserListPage from "./pages/UserListPage";
-import CourseListPage from "./pages/CourseListPage";
-import BlogListPage from "./pages/BlogListPage";
-import ConsultantListPage from "./pages/ConsultantListPage";
+import UserListPage from "./pages/admin/UserListPage";
+import CourseListPage from "./pages/admin/CourseListPage";
+import BlogListPage from "./pages/admin/BlogListPage";
+import ConsultantListPage from "./pages/admin/ConsultantListPage";
+import ConsultantLayout from "./layout/ConsultantLayout";
+import Certificate from "./pages/consultant/Certificate";
+import ManageBooking from "./pages/consultant/ManageBooking";
+import ManageBlog from "./pages/consultant/ManageBlog";
+import ManageCourse from "./pages/consultant/ManageCourse";
 
 // Wrapper component to conditionally render Navbar and Footer
 const AppLayout = () => {
@@ -40,6 +45,10 @@ const AppLayout = () => {
     "/courselist",
     "/bloglist",
     "/consultantlist",
+    "/consultant/certificate",
+    "/consultant/booking",
+    "/consultant/blog",
+    "/consultant/course",
   ].includes(location.pathname);
 
   return (
@@ -109,6 +118,39 @@ const AppLayout = () => {
               <AdminLayout>
                 <ConsultantListPage />
               </AdminLayout>
+            }
+          />
+          {/* Consultant */}
+          <Route
+            path="/consultant/certificate"
+            element={
+              <ConsultantLayout>
+                <Certificate />
+              </ConsultantLayout>
+            }
+          />
+          <Route
+            path="/consultant/booking"
+            element={
+              <ConsultantLayout>
+                <ManageBooking />
+              </ConsultantLayout>
+            }
+          />
+          <Route
+            path="/consultant/blog"
+            element={
+              <ConsultantLayout>
+                <ManageBlog />
+              </ConsultantLayout>
+            }
+          />
+          <Route
+            path="/consultant/course"
+            element={
+              <ConsultantLayout>
+                <ManageCourse />
+              </ConsultantLayout>
             }
           />
         </Routes>

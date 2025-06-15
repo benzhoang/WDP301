@@ -1,0 +1,101 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.blog-table {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .ant-table-thead > tr > th {
+    background-color: #f5f5f5;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .ant-table-tbody > tr > td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .ant-pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+    .ant-pagination-item {
+      border-radius: 4px;
+      margin: 0 2px;
+      a {
+        color: #000;
+      }
+    }
+
+    .ant-pagination-item-active {
+      background-color: #b0c4de;
+      a {
+        color: #fff;
+      }
+    }
+
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      a {
+        color: #000;
+      }
+    }
+  }
+}
+
+.view-btn {
+  color: #000;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 16px;
+}
+
+.delete-btn {
+  color: #000;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 16px;
+}
+
+.add-btn {
+  background-color: #b0c4de;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #a3b8d1;
+  }
+}
+
+.ant-modal-content {
+  border-radius: 8px;
+
+  .ant-modal-header {
+    background-color: #f5f5f5;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .ant-modal-body {
+    padding: 24px;
+  }
+
+  .ant-form-item-label {
+    font-weight: bold;
+  }
+
+  .ant-input,
+  .ant-input-affix-wrapper {
+    border-radius: 4px;
+  }
+}

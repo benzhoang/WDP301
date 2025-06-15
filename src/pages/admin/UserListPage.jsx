@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaSearch, FaPlus } from "react-icons/fa";
 import { FaTrash, FaWrench } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
-import "../styles/StaffListPage.scss";
+import "../../styles/StaffListPage.scss";
 
 const UserListPage = () => {
   const [showPopup, setShowPopup] = useState(false);
