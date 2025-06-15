@@ -2,9 +2,9 @@ import { useState } from "react";
 import { FaSearch, FaPlus } from "react-icons/fa";
 import { FaTrash, FaWrench } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
-import "../styles/StaffListPage.scss";
+import "../../styles/StaffListPage.scss";
 
-const CourseListPage = () => {
+const BlogListPage = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleClosePopup = () => setShowPopup(false);
@@ -110,22 +110,7 @@ const CourseListPage = () => {
                     placeholder="Enter date of joining"
                   />
                 </div>
-                {/* <div>
-                         <label htmlFor="brand">Brand: </label>
-                         <select value={arttool.brand} name='brand' onChange={handleChange}>
-                             <option value="">Choose brand</option>
-                             <option value="KingArt">KingArt</option>
-                             <option value="Color Splash">Color Splash</option>
-                             <option value="Edding">Edding</option>
-                             <option value="Arteza">Arteza</option>
-                         </select>
-                         <br/>
-                         {errors.brand_err && <span className='error'>{errors.brand_err}</span>}
-                     </div>
-                     <div>
-                         <label htmlFor="limitedTimeDeal">Limited Time Deal: </label>
-                         <input type="number" name='limitedTimeDeal' value={arttool.limitedTimeDeal} step="1" onChange={handleChange} />
-                     </div> */}
+
                 <button type="submit" className="form-button">
                   Create
                 </button>
@@ -138,4 +123,4 @@ const CourseListPage = () => {
   );
 };
 
-export default CourseListPage;
+export default BlogListPage;

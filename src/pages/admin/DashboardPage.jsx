@@ -1,31 +1,43 @@
-import { useRef, useEffect } from 'react';
-import { Chart } from 'chart.js/auto';
-import '../styles/DashboardPage.scss';
+import { useRef, useEffect } from "react";
+import { Chart } from "chart.js/auto";
+import "../../styles/DashboardPage.scss";
 
 const DashboardPage = () => {
   const canvasRef = useRef(null);
   const chartInstance = useRef(null);
 
   useEffect(() => {
-    const ctx = canvasRef.current.getContext('2d');
+    const ctx = canvasRef.current.getContext("2d");
 
     if (chartInstance.current) {
       chartInstance.current.destroy();
     }
 
     chartInstance.current = new Chart(ctx, {
-      type: 'bar',
+      type: "bar",
       data: {
         labels: [
-          'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
         ],
-        datasets: [{
-          label: 'Month',
-          data: [30, 20, 35, 40, 60, 50, 90, 70, 20, 70, 50, 40],
-          backgroundColor: '#66B0C6',
-          borderRadius: 8
-        }]
+        datasets: [
+          {
+            label: "Month",
+            data: [30, 20, 35, 40, 60, 50, 90, 70, 20, 70, 50, 40],
+            backgroundColor: "#66B0C6",
+            borderRadius: 8,
+          },
+        ],
       },
       options: {
         responsive: true,
@@ -33,18 +45,18 @@ const DashboardPage = () => {
         plugins: {
           legend: {
             display: true,
-            position: 'bottom'
-          }
+            position: "bottom",
+          },
         },
         scales: {
           y: {
             title: {
               display: true,
-              text: 'Unit: VND'
-            }
-          }
-        }
-      }
+              text: "Unit: VND",
+            },
+          },
+        },
+      },
     });
   }, []);
 
